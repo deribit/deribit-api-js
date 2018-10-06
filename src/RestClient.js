@@ -254,7 +254,7 @@ RestClient.prototype.orderhistory = function(count) {
 };
 
 RestClient.prototype.orderstate = function(orderId, callback) {
-  return this.request("/api/v1/private/orderhistory", { orderId: orderId }, callback);
+  return this.request("/api/v1/private/orderstate", { orderId: orderId }, callback);
 };
 
 RestClient.prototype.tradehistory = function(count, instrument, startTradeId, callback) {
