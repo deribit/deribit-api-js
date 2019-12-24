@@ -1,4 +1,4 @@
-# API Client for [Deribit API](https://www.deribit.com/docs/api/)
+# API Client for [Deribit API](https://docs.deribit.com/)
 
 # !DEPRECATED!
 
@@ -51,7 +51,7 @@ Constructor creates new REST client.
 
 ### Methods
 
-* `getorderbook(instrument, callback)` - [Doc](https://www.deribit.com/docs/api/#getinstruments), public
+* `getorderbook(instrument, callback)` - [Doc](https://docs.deribit.com/rpc-endpoints.html#getinstruments), public
 
   Retrieve the orderbook for a given instrument.
 
@@ -62,7 +62,7 @@ Constructor creates new REST client.
   | `instrument` | `string`   | Required, instrument name                                  |
   | `callback`   | `function` | Optional, callback, if not provided method returns promise |
 
-* `index(callback)` - [Doc](https://www.deribit.com/docs/api/#index), public
+* `index(callback)` - [Doc](https://docs.deribit.com/rpc-endpoints.html#index), public
 
   Get price index, BTC-USD rates.
 
@@ -72,7 +72,7 @@ Constructor creates new REST client.
   |------------|------------|------------------------------------------------------------|
   | `callback` | `function` | Optional, callback, if not provided method returns promise |
 
-* `getcurrencies(callback)` - [Doc](https://www.deribit.com/docs/api/#getcurrencies), public
+* `getcurrencies(callback)` - [Doc](https://docs.deribit.com/rpc-endpoints.html#getcurrencies), public
 
   Get all supported currencies.
 
@@ -82,7 +82,7 @@ Constructor creates new REST client.
   |------------|------------|------------------------------------------------------------|
   | `callback` | `function` | Optional, callback, if not provided method returns promise |
 
-* `getorderbook(instrument, callback)` - [Doc](https://www.deribit.com/docs/api/#getorderbook), public
+* `getorderbook(instrument, callback)` - [Doc](https://docs.deribit.com/rpc-endpoints.html#getorderbook), public
 
   Retrieve the orderbook for a given instrument.
 
@@ -93,7 +93,7 @@ Constructor creates new REST client.
   | `instrument` | `string`   | Required, instrument name                                  |
   | `callback`   | `function` | Optional, callback, if not provided method returns promise |
 
-* `getlasttrades(instrument, count, since, callback)` - [Doc](https://www.deribit.com/docs/api/#getlasttrades), public
+* `getlasttrades(instrument, count, since, callback)` - [Doc](https://docs.deribit.com/rpc-endpoints.html#getlasttrades), public
 
   Retrieve the latest trades that have occured for a specific instrument.
 
@@ -106,7 +106,7 @@ Constructor creates new REST client.
   | `since`      | `integer`  | Optional, “since” trade id, the server returns trades newer than that “since” |
   | `callback`   | `function` | Optional, callback, if not provided method returns promise                    |
 
-* `getsummary(instrument, callback)` - [Doc](https://www.deribit.com/docs/api/#getsummary), public
+* `getsummary(instrument, callback)` - [Doc](https://docs.deribit.com/rpc-endpoints.html#getsummary), public
 
   Retrieve the summary info such as Open Interest, 24H Volume etc for a specific instrument.
 
@@ -117,7 +117,7 @@ Constructor creates new REST client.
   | `instrument` | `string`   | Required, instrument name                                  |
   | `callback`   | `function` | Optional, callback, if not provided method returns promise |
 
-* `account(callback)` - [Doc](https://www.deribit.com/docs/api/#account), Private
+* `account(callback)` - [Doc](https://docs.deribit.com/rpc-endpoints.html#account), Private
 
   Get user account summary.
 
@@ -127,7 +127,7 @@ Constructor creates new REST client.
   |--------------|------------|------------------------------------------------------------|
   | `callback`   | `function` | Optional, callback, if not provided method returns promise |
 
-* `buy(instrument, quantity, price, postOnly, label, callback)` - [Doc](https://www.deribit.com/docs/api/#buy), private
+* `buy(instrument, quantity, price, postOnly, label, callback)` - [Doc](https://docs.deribit.com/rpc-endpoints.html#buy), private
 
   Place a buy order in an instrument.
 
@@ -142,7 +142,7 @@ Constructor creates new REST client.
   | `label`      | `string`   | Optional, user defined maximum 4-char label for the order                         |
   | `callback`   | `function` | Optional, callback, if not provided method returns promise                        |
 
-* `sell(instrument, quantity, price, postOnly, label, callback)` - [Doc](https://www.deribit.com/docs/api/#sell), private
+* `sell(instrument, quantity, price, postOnly, label, callback)` - [Doc](https://docs.deribit.com/rpc-endpoints.html#sell), private
 
   Place a sell order in an instrument.
 
@@ -157,7 +157,7 @@ Constructor creates new REST client.
   | `label`      | `string`   | Optional, user defined maximum 4-char label for the order                         |
   | `callback`   | `function` | Optional, callback, if not provided method returns promise                        |
 
-* `edit(orderId, quantity, price, callback)` - [Doc](https://www.deribit.com/docs/api/#edit)
+* `edit(orderId, quantity, price, callback)` - [Doc](https://docs.deribit.com/rpc-endpoints.html#edit)
 
   Edit price and/or quantity of the own order. (Authorization is required).
 
@@ -170,7 +170,7 @@ Constructor creates new REST client.
   | `price`      | `float`    | Required, USD for futures, BTC for options                                        |
   | `callback`   | `function` | Optional, callback, if not provided method returns promise                        |
 
-* `cancel(orderId, callback)` - [Doc](https://www.deribit.com/docs/api/#cancel), private
+* `cancel(orderId, callback)` - [Doc](https://docs.deribit.com/rpc-endpoints.html#cancel), private
 
   Cancell own order by id.
 
@@ -181,7 +181,7 @@ Constructor creates new REST client.
   | `orderId`    | `integer`  | Required, ID of the order returned by "sell" or "buy" request                     |
   | `callback`   | `function` | Optional, callback, if not provided method returns promise                        |
 
-* `cancelall(type, callback)` - [Doc](https://www.deribit.com/docs/api/#cancelall)
+* `cancelall(type, callback)` - [Doc](https://docs.deribit.com/rpc-endpoints.html#cancelall)
 
   Cancel all own futures, or all options, or all.
 
@@ -192,7 +192,7 @@ Constructor creates new REST client.
   | `type`       | `string`   | Optional, type of instruments to cancel, allowed: "all", "futures", "options", default: "all" |
   | `callback`   | `function` | Optional, callback, if not provided method returns promise                                    |
 
-* `getopenorders(instrument, orderId, callback)` - [Doc](https://www.deribit.com/docs/api/#getopenorders), private
+* `getopenorders(instrument, orderId, callback)` - [Doc](https://docs.deribit.com/rpc-endpoints.html#getopenorders), private
 
   Retrieve open orders.
 
@@ -204,7 +204,7 @@ Constructor creates new REST client.
   | `orderId`    | `integer`  | Optional, order id                                                    |
   | `callback`   | `function` | Optional, callback, if not provided method returns promise            |
 
-* `positions(callback)` - [Doc](https://www.deribit.com/docs/api/#positions), private
+* `positions(callback)` - [Doc](https://docs.deribit.com/rpc-endpoints.html#positions), private
 
   Retreive positions.
 
@@ -214,7 +214,7 @@ Constructor creates new REST client.
   |--------------|------------|------------------------------------------------------------|
   | `callback`   | `function` | Optional, callback, if not provided method returns promise |
 
-* `orderhistory(count, callback)` - [Doc](https://www.deribit.com/docs/api/#orderhistory), private
+* `orderhistory(count, callback)` - [Doc](https://docs.deribit.com/rpc-endpoints.html#orderhistory), private
 
   Get history.
 
@@ -225,7 +225,7 @@ Constructor creates new REST client.
   | `count`    | `integer`  | Optional, number of requested records                      |
   | `callback` | `function` | Optional, callback, if not provided method returns promise |
 
-* `tradehistory(count, instrument, startTradeId, callback)` - [Doc](https://www.deribit.com/docs/api/#tradehistory), private
+* `tradehistory(count, instrument, startTradeId, callback)` - [Doc](https://docs.deribit.com/rpc-endpoints.html#tradehistory), private
 
   Get private trade history of the account. (Authorization is required). The result is ordered by trade identifiers (trade id-s).
 
