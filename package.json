@@ -16,11 +16,12 @@
   },
   "dependencies": {
     "create-hash": "^1.1.2",
+    "mocha": "^6.1.1",
     "node-rest-client": "^3.0.3",
     "q": "^1.4.1"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/mocha/bin/mocha"
   }
 }
