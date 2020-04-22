@@ -172,8 +172,19 @@ RestClient.prototype.getlasttrades = function(instrument, count, since, callback
   return this.request("/api/v1/public/getlasttrades", options, callback);
 };
 
-RestClient.prototype.getsummary = function(instrument, callback) {
-  return this.request("/api/v1/public/getsummary", {instrument: instrument}, callback);
+RestClient.prototype.getsummary = function(instrument, currency, callback) {
+  var options = {};
+
+  if ( instrument !== undefined) { options["instrument"] = instrument; }
+  if ( currency   !== undefined) {
+    if (typeof currency === 'function') {
+      callback = currency;
+    } else {
+      options["currency"] = currency;
+    }
+  }
+
+  return this.request("/api/v1/public/getsummary", options, callback);
 };
 
 RestClient.prototype.index = function(callback) {
