@@ -247,7 +247,7 @@ RestClient.prototype.positions = function(callback) {
   return this.request("/api/v1/private/positions", {}, callback);
 };
 
-RestClient.prototype.orderhistory = function(count) {
+RestClient.prototype.orderhistory = function(count, callback) {
   var options = {};
   if (count    !== undefined ) { options["count"] = count};
   return this.request("/api/v1/private/orderhistory", options, callback);
