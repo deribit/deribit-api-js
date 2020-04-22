@@ -131,7 +131,7 @@ RestClient.prototype.request = function(action, data, callback) {
     actionFunction(this.url + action, args, function(result, response) {
       if (response.headers['content-type'] != "application/json") {
         debug("invalid response content-type %s", response.headers['content-type']);
-        callback(null, "wrong response type");
+        callback(null, new Error("wrong response type"));
         return;
       }
       debug("response: %o", data);
