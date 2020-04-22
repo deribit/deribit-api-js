@@ -29,7 +29,10 @@ restClient.getcurrencies().then((result) => {
   console.log("Currencies: ", result);
 });
 
-restClient.index((result) => {
+restClient.index((result, error) => {
+  if(error) {
+    return console.log("Error:", error);
+  }
   console.log("Index: ", result)
 });
 ```
